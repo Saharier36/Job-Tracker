@@ -38,7 +38,7 @@
         <div class="card bg-base-100 shadow-sm">
           <div class="card-body">
             <p>Total</p>
-            <p id="total-count" class="text-2xl font-bold">8</p>
+            <p id="total-count" class="text-2xl font-bold">0</p>
           </div>
         </div>
         <div class="card bg-base-100 shadow-sm">
@@ -60,14 +60,14 @@
       <!-- Available Jobs -->
       <section class="flex justify-between items-center mb-4">
         <h2 class="text-lg text-[#002C5C] font-medium">Available Jobs</h2>
-        <p id="jobs-count" class="text-sm text-gray-500">8 jobs</p>
+        <p id="jobs-count" class="text-sm text-gray-500">0 jobs</p>
       </section>
 
       <!-- job buttons -->
       <section class="">
-        <button class="filter-btn-all btn bg-[#3B82F6] text-white">All</button>
-        <button class="filter-btn-interview btn">Interview</button>
-        <button class="filter-btn-rejected btn">Rejected</button>
+        <button onclick="toggleStyle('filter-btn-all')" id="filter-btn-all" class="btn bg-[#3B82F6] text-white">All</button>
+        <button onclick="toggleStyle('filter-btn-interview')" id="filter-btn-interview" class="btn">Interview</button>
+        <button onclick="toggleStyle('filter-btn-rejected')" id="filter-btn-rejected" class="btn">Rejected</button>
       </section>
 
       <!-- all jobs -->
