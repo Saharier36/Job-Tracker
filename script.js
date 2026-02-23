@@ -141,21 +141,28 @@ mainContainer.addEventListener("click", function (event) {
   ) {
     const deleteBtn = event.target.closest(".delete-btn");
     const card = deleteBtn.closest(".card");
-    const companyName = card.querySelector(".company-name").innerText;
 
-    interviewList = interviewList.filter(
-      (item) => item.companyName !== companyName,
-    );
-    rejectList = rejectList.filter((item) => item.companyName !== companyName);
-    card.remove();
+    delete_modal.showModal();
+    document.getElementById("confirm-delete").onclick = function () {
+      const companyName = card.querySelector(".company-name").innerText;
 
-    if (currentStatus === "filter-btn-interview") {
-      renderInterview();
-    } else if (currentStatus === "filter-btn-rejected") {
-      renderRejected();
-    }
+      interviewList = interviewList.filter(
+        (item) => item.companyName !== companyName,
+      );
+      rejectList = rejectList.filter(
+        (item) => item.companyName !== companyName,
+      );
 
-    calculateCounts();
+      card.remove();
+
+      if (currentStatus === "filter-btn-interview") {
+        renderInterview();
+      } else if (currentStatus === "filter-btn-rejected") {
+        renderRejected();
+      }
+
+      calculateCounts();
+    };
   }
 });
 
