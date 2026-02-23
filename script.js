@@ -33,3 +33,22 @@ function toggleStyle(id) {
 
   document.getElementById(id).classList.add("bg-[#3B82F6]", "text-white");
 }
+
+// Interview and Click Button
+mainContainer.addEventListener("click", function(event){
+  const parentNode = event.target.parentNode.parentNode;
+  const companyName = parentNode.querySelector(".company-name").innerText;
+  const jobPosition = parentNode.querySelector(".job-position").innerText;
+  const jobData = parentNode.querySelector(".job-data").innerText;
+  const jobStatus = parentNode.querySelector(".job-status").innerText;
+  const jobDescription = parentNode.querySelector(".job-description").innerText;
+
+  const jobInfo = {
+    companyName,
+    jobPosition,
+    jobData,
+    jobStatus,
+    jobDescription
+  };
+  console.log(jobInfo);
+})
