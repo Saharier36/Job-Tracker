@@ -169,7 +169,7 @@ function renderInterview() {
   filteredJobsSection.innerHTML = "";
    if (interviewList.length === 0) {
      filteredJobsSection.innerHTML = `
-      <div class="flex flex-col items-center justify-center mt-6 text-center card gap-2 bg-white shadow-md rounded-lg p-20 mb-4">
+      <div class="flex flex-col items-center justify-center mt-6 text-center card gap-2 bg-white shadow-md rounded-lg p-6 lg:p-20 mb-4">
         <img src="./jobs.png" alt="" class="mb-4">
         <p class="text-lg font-bold text-[#002C5C]">No Jobs Available</p>
         <p class="text-sm text-gray-500">Check back soon for new job opportunities</p>
@@ -228,7 +228,7 @@ function renderRejected() {
   
   if (rejectList.length === 0) {
     filteredJobsSection.innerHTML = `
-      <div class="flex flex-col items-center justify-center mt-6 text-center card gap-2 bg-white shadow-md rounded-lg p-20 mb-4">
+      <div class="flex flex-col items-center justify-center mt-6 text-center card gap-2 bg-white shadow-md rounded-lg p-6 lg:p-20 mb-4">
         <img src="./jobs.png" alt="" class="mb-4">
         <p class="text-lg font-bold text-[#002C5C]">No Jobs Available</p>
         <p class="text-sm text-gray-500">Check back soon for new job opportunities</p>
