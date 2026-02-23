@@ -1,3 +1,11 @@
+Questions ->
+1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+2. How do you create and insert a new element into the DOM?
+3. What is Event Bubbling? And how does it work?
+4. What is Event Delegation in JavaScript? Why is it useful?
+5. What is the difference between preventDefault() and stopPropagation() methods?
+
+Answers ->
 1. getElementById can get only one element because Id is always unique but querySelector can select by id, class, or tag Name. getElementsByClassName and querySelectorAll can return multiple elements because multiple classes can be selected. getElementsByClassName returns an HTMLCollection but querySelectorAll returns a NodeList.
 
 2. To create and insert a new element into the DOM, firstly i need to create an element with createElement method then i add content with innerText or innerHTML and then append it to the exiting element.
