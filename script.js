@@ -70,7 +70,7 @@ mainContainer.addEventListener("click", function (event) {
       parentNode.querySelector(".job-description").innerText;
 
     parentNode.querySelector(".job-status").className =
-      "job-status text-green-500 w-fit bg-green-100 px-3 py-2 rounded-sm text-sm font-bold";
+      "job-status text-green-500 w-fit bg-green-100 px-5 py-2 rounded-sm text-sm font-bold";
     parentNode.querySelector(".job-status").innerText = "INTERVIEW";
 
     const jobInfo = {
@@ -110,7 +110,7 @@ mainContainer.addEventListener("click", function (event) {
       parentNode.querySelector(".job-description").innerText;
 
     parentNode.querySelector(".job-status").className =
-      "job-status text-red-500 w-fit bg-red-100 px-3 py-2 rounded-sm text-sm font-bold";
+      "job-status text-red-500 w-fit bg-red-100 px-5.5 py-2 rounded-sm text-sm font-bold";
     parentNode.querySelector(".job-status").innerText = "REJECTED";
 
     const jobInfo = {
@@ -196,7 +196,7 @@ function renderInterview() {
             <p class="job-data text-sm text-gray-500 mb-5">
               ${interview.jobData}
             </p>
-            <p class="job-status w-fit bg-green-100 text-green-500 px-3 py-2 rounded-sm text-sm font-bold">
+            <p class="job-status w-fit bg-green-100 text-green-500 px-5 py-2 rounded-sm text-sm font-bold">
               ${interview.jobStatus}
             </p>
             <p class="job-description mt-2 mb-5">
@@ -206,12 +206,12 @@ function renderInterview() {
               <button
                 class="interview-btn btn text-green-500 border-green-500 bg-white hover:bg-green-100"
               >
-                Interview
+                INTERVIEW
               </button>
               <button
                 class="rejected-btn btn text-red-500 border-red-500 bg-white hover:bg-red-100"
               >
-                Rejected
+                REJECTED
               </button>
             </div>
           </div>
@@ -255,7 +255,7 @@ function renderRejected() {
             <p class="job-data text-sm text-gray-500 mb-5">
               ${rejected.jobData}
             </p>
-            <p class="job-status w-fit bg-red-100 text-red-500 px-3 py-2 rounded-sm text-sm font-bold">
+            <p class="job-status w-fit bg-red-100 text-red-500 px-5.5 py-2 rounded-sm text-sm font-bold">
               ${rejected.jobStatus}
             </p>
             <p class="job-description mt-2 mb-5">
@@ -265,12 +265,12 @@ function renderRejected() {
               <button
                 class="interview-btn btn text-green-500 border-green-500 bg-white hover:bg-green-100"
               >
-                Interview
+                INTERVIEW
               </button>
               <button
                 class="rejected-btn btn text-red-500 border-red-500 bg-white hover:bg-red-100"
               >
-                Rejected
+                REJECTED
               </button>
             </div>
           </div>
