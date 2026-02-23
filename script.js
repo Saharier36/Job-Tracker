@@ -1,6 +1,6 @@
 let interviewList = [];
 let rejectList = [];
-let currentStatus = "ALL";
+let currentStatus = "filter-btn-all";
 
 let totalCount = document.getElementById("total-count");
 let interviewCount = document.getElementById("interview-count");
@@ -17,9 +17,16 @@ const filteredJobsSection = document.getElementById("filtered-jobs");
 
 function calculateCounts() {
   totalCount.innerText = allJobSections.children.length;
-  jobsCount.innerText = `${allJobSections.children.length} jobs`;
   interviewCount.innerText = interviewList.length;
   rejectedCount.innerText = rejectList.length;
+
+  if(currentStatus === "filter-btn-all") {
+    jobsCount.innerText = `${allJobSections.children.length} jobs`;
+  } else if(currentStatus === "filter-btn-interview") {
+    jobsCount.innerText = `${interviewList.length} jobs`;
+  } else if(currentStatus === "filter-btn-rejected") {
+    jobsCount.innerText = `${rejectList.length} jobs`;
+  }
 }
 calculateCounts();
 
@@ -47,6 +54,7 @@ function toggleStyle(id) {
     filteredJobsSection.classList.remove("hidden");
     renderRejected();
   }
+  calculateCounts();
 }
 
 // Click Button
@@ -161,8 +169,8 @@ function renderInterview() {
   filteredJobsSection.innerHTML = "";
    if (interviewList.length === 0) {
      filteredJobsSection.innerHTML = `
-      <div class="flex flex-col items-center justify-center mt-20 text-center card gap-2 bg-white shadow-md rounded-lg p-20 mb-4">
-        <img src="./jobs.png" alt="No Jobs" class=" mb-4">
+      <div class="flex flex-col items-center justify-center mt-6 text-center card gap-2 bg-white shadow-md rounded-lg p-20 mb-4">
+        <img src="./jobs.png" alt="" class="mb-4">
         <p class="text-lg font-bold text-[#002C5C]">No Jobs Available</p>
         <p class="text-sm text-gray-500">Check back soon for new job opportunities</p>
       </div>
@@ -220,10 +228,10 @@ function renderRejected() {
   
   if (rejectList.length === 0) {
     filteredJobsSection.innerHTML = `
-      <div class="flex flex-col items-center justify-center mt-20 text-center">
-        <i class="fa-regular fa-folder-open text-6xl text-gray-300 mb-4"></i>
-        <p class="text-lg font-bold text-gray-500">No Jobs Available</p>
-        <p class="text-sm text-gray-400">You have not added any rejected jobs yet.</p>
+      <div class="flex flex-col items-center justify-center mt-6 text-center card gap-2 bg-white shadow-md rounded-lg p-20 mb-4">
+        <img src="./jobs.png" alt="" class="mb-4">
+        <p class="text-lg font-bold text-[#002C5C]">No Jobs Available</p>
+        <p class="text-sm text-gray-500">Check back soon for new job opportunities</p>
       </div>
     `;
     return;
