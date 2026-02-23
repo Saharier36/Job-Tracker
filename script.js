@@ -20,11 +20,11 @@ function calculateCounts() {
   interviewCount.innerText = interviewList.length;
   rejectedCount.innerText = rejectList.length;
 
-  if(currentStatus === "filter-btn-all") {
+  if (currentStatus === "filter-btn-all") {
     jobsCount.innerText = `${allJobSections.children.length} jobs`;
-  } else if(currentStatus === "filter-btn-interview") {
+  } else if (currentStatus === "filter-btn-interview") {
     jobsCount.innerText = `${interviewList.length} jobs`;
-  } else if(currentStatus === "filter-btn-rejected") {
+  } else if (currentStatus === "filter-btn-rejected") {
     jobsCount.innerText = `${rejectList.length} jobs`;
   }
 }
@@ -143,16 +143,12 @@ mainContainer.addEventListener("click", function (event) {
     const card = deleteBtn.closest(".card");
     const companyName = card.querySelector(".company-name").innerText;
 
-    
     interviewList = interviewList.filter(
       (item) => item.companyName !== companyName,
     );
     rejectList = rejectList.filter((item) => item.companyName !== companyName);
-
-    
     card.remove();
 
-    
     if (currentStatus === "filter-btn-interview") {
       renderInterview();
     } else if (currentStatus === "filter-btn-rejected") {
@@ -167,16 +163,16 @@ mainContainer.addEventListener("click", function (event) {
 
 function renderInterview() {
   filteredJobsSection.innerHTML = "";
-   if (interviewList.length === 0) {
-     filteredJobsSection.innerHTML = `
+  if (interviewList.length === 0) {
+    filteredJobsSection.innerHTML = `
       <div class="flex flex-col items-center justify-center mt-6 text-center card gap-2 bg-white shadow-md rounded-lg p-6 lg:p-20 mb-4">
         <img src="./jobs.png" alt="" class="mb-4">
         <p class="text-lg font-bold text-[#002C5C]">No Jobs Available</p>
         <p class="text-sm text-gray-500">Check back soon for new job opportunities</p>
       </div>
     `;
-     return;
-   }
+    return;
+  }
   for (let interview of interviewList) {
     let div = document.createElement("div");
     div.classList =
@@ -225,7 +221,7 @@ function renderInterview() {
 
 function renderRejected() {
   filteredJobsSection.innerHTML = "";
-  
+
   if (rejectList.length === 0) {
     filteredJobsSection.innerHTML = `
       <div class="flex flex-col items-center justify-center mt-6 text-center card gap-2 bg-white shadow-md rounded-lg p-6 lg:p-20 mb-4">
